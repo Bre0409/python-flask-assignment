@@ -1,0 +1,27 @@
+body {
+    background-image: url("/static/images/mydiary3.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    margin: 0;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    margin-top: 10%;
+    
+}
+.navbar-nav{
+    margin:auto;
+      gap: 40px;
+}
+.navbar-nav a #id{
+            color:blue;
+}
+
+.incorrect {
+    border-color: red !important;
+}

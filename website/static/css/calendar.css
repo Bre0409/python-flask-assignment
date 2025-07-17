@@ -1,0 +1,100 @@
+.calendar-wrapper {
+  max-width: 700px;
+  margin: 40px auto;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.calendar-controls {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.calendar-controls label {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.calendar-controls select,
+.calendar-controls button {
+  padding: 5px 10px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  user-select: none;
+  background-color: white;
+  transition: background-color 0.3s ease;
+}
+
+/* This styles the arrows and other buttons the same */
+.calendar-controls button:hover {
+  background-color: #ddd;
+}
+
+#reset-btn {
+  background-color: #333;
+  color: white;
+  border: none;
+  font-weight: bold;
+}
+
+#reset-btn:hover {
+  background-color: #555;
+}
+
+.calendar-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.calendar-header div {
+  padding: 10px 0;
+  border-bottom: 2px solid #333;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+.calendar-grid div {
+  padding: 10px;
+  background-color: #eaeaea;
+  border-radius: 5px;
+  min-height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: default;
+  user-select: none;
+}
+.calendar-day ul.event-list {
+  list-style: none;
+  padding-left: 5px;
+  margin-top: 4px;
+  font-size: 0.8em;
+  color: #333;
+  text-align: left;
+  max-height: 80px;
+  overflow-y: auto;
+}
+
+.calendar-day ul.event-list li {
+  background-color: #d0eaff;
+  margin-bottom: 2px;
+  padding: 2px 4px;
+  border-radius: 3px;
+  cursor: default;
+}
