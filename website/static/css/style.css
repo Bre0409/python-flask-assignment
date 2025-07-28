@@ -6,22 +6,48 @@ body {
     height: 100vh;
     margin: 0;
 }
-form{
+
+form {
     display: flex;
     flex-direction: column;
     align-content: center;
     align-items: center;
     margin-top: 10%;
-    
 }
-.navbar-nav{
-    margin:auto;
-      gap: 40px;
+
+.navbar-nav {
+    margin: auto;
+    gap: 40px;
 }
-.navbar-nav a #id{
-            color:blue;
+
+.navbar-nav a #id {
+    color: blue;
 }
 
 .incorrect {
     border-color: red !important;
+}
+
+/* ✅ Mobile Navbar Overlay */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        position: absolute;
+        top: 56px; /* height of navbar */
+        left: 0;
+        right: 0;
+        background-color: #343a40; /* same as navbar-dark bg-dark */
+        z-index: 999;
+        padding: 1rem;
+    }
+
+    /* These help smooth out transitions */
+    .navbar-collapse.collapsing {
+        height: auto !important;
+        transition: none;
+        display: none;
+    }
+
+    .navbar-collapse.show {
+        display: block;
+    }
 }
