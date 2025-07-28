@@ -26,3 +26,8 @@ button:hover {
   color: #fff;
    text-decoration: underline;
 }
+.container{
+  padding-top: 5%;
+  padding-bottom: 5%;
+  
+}

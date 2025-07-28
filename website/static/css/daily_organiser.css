@@ -186,3 +186,22 @@
   font-style: italic;
   margin-top: 20px;
 }
+
+
+.container{
+    margin-top: 10%;
+    border: solid green 2px;
+    width: 50%;
+}
+
+@media(max-width: 550px){
+  .container{
+        margin-top: 0px;
+        width: 100%;
+  }
+}
+@media(max-width: 376px){
+  body{
+    height:150vh;
+
+}}
