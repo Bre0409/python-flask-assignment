@@ -136,3 +136,51 @@
 .logout-btn:hover{
   color: #fff;
 }
+
+
+/* @media (max-width: 768px) {
+  .main-title {
+    font-size: 2.5rem;
+    margin-top: 30px;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+  }
+
+  .description {
+    font-size: 0.95rem;
+  }
+
+  .btn-home {
+    font-size: 0.95rem;
+    padding: 10px 20px;
+  }
+} */
+
+/* For screens up to 480px — stack buttons and tighten spacing */
+ @media (max-width: 480px) {
+
+  .container{
+  border: solid 2px green;
+  /* width: 70%; */
+  margin-top: 50%;
+  
+}
+  .main-title {
+    font-size: 2rem;
+    /* margin-top:100px; */
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .description {
+    font-size: 0.8rem;
+    width: 80%;
+    border: 2px solid blue;
+    margin-bottom: 0px;
+  }
+}
+
