@@ -1,33 +1,49 @@
 from flask import Blueprint, render_template, request, redirect, url_for
-from .events import events  # ✅ Import the in-memory events list
+from .events import events
 
 views = Blueprint('views', __name__)
 
+# In-memory task list with day support
 tasks = []
 task_id_counter = 1
+
+DAY_NAMES = ["Today", "Tomorrow", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 
 @views.route('/tasks', methods=['GET', 'POST'])
 def task_list():
     global task_id_counter
 
+    # Determine selected day
+    selected_day = request.args.get('day', 'Today')
+    if selected_day not in DAY_NAMES:
+        selected_day = 'Today'
+
     if request.method == 'POST':
         task_text = request.form.get('task')
-        if task_text:
+        task_day = request.form.get('day', 'Today')
+
+        if task_text and task_day in DAY_NAMES:
             tasks.append({
                 'id': task_id_counter,
                 'text': task_text,
-                'completed': False
+                'completed': False,
+                'day': task_day
             })
             task_id_counter += 1
-        return redirect(url_for('views.task_list'))
+        return redirect(url_for('views.task_list', day=task_day))
 
-    return render_template('todolist.html', tasks=tasks)
+    return render_template(
+        'daily_organiser.html',
+        tasks=tasks,
+        selected_day=selected_day,
+        selected_day_index=DAY_NAMES.index(selected_day)
+    )
 
 @views.route('/delete/<int:task_id>', methods=['POST'])
 def delete_task(task_id):
     global tasks
     tasks = [task for task in tasks if task['id'] != task_id]
-    return redirect(url_for('views.task_list'))
+    return redirect(request.referrer or url_for('views.task_list'))
 
 @views.route('/complete/<int:task_id>', methods=['POST'])
 def complete_task(task_id):
@@ -35,16 +51,16 @@ def complete_task(task_id):
         if task['id'] == task_id:
             task['completed'] = not task['completed']
             break
-    return redirect(url_for('views.task_list'))
+    return redirect(request.referrer or url_for('views.task_list'))
 
 @views.route('/edit/<int:task_id>', methods=['POST'])
 def edit_task(task_id):
     new_text = request.form.get('edited_text')
     for task in tasks:
-        if task['id'] == task_id:
+        if task['id'] == task_id and new_text:
             task['text'] = new_text
             break
-    return redirect(url_for('views.task_list'))
+    return redirect(request.referrer or url_for('views.task_list'))
 
 @views.route('/')
 def index():
@@ -52,6 +68,6 @@ def index():
 
 @views.route('/calendar')
 def calendar():
-    return render_template('calendar.html', events=events)  
+    return render_template('calendar.html', events=events)
 
 

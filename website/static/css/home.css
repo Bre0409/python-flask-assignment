@@ -108,3 +108,31 @@
   background-color: #444;
   color: #fff;
 }
+
+.login-success-message {
+  margin-bottom: 50px;
+  color: #155724;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.logout-btn{
+  color: #fff;
+  background-color: #444;
+}
+.logout-btn:hover{
+  color: #fff;
+}

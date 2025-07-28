@@ -1,33 +1,48 @@
-{% extends "base.html" %} {% block title%}Login{% endblock %}
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
 
-{% block content%}
+{% block content %}
 
-<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}" />
 
-<form method="POST">
-    <h3 align="center">Login</h3>
-    <div class="form group">
-        <label for="email">Email Address</label>
-        <input 
-        type="email" 
-        class="form-control" 
-        id="email" 
-        name="email" 
-        placeholder="Enter email"/>
-    </div>
-     <div class="form group">
-        <label for="password">Password</label>
-        <input 
-        type="password" 
-        class="form-control" 
-        id="password" 
-        name="password" 
-        placeholder="Enter password"/>
-    </div>
-    <div id="login-error-message" style="color: red; margin-top: 10px;"></div>
-<div id="login-success-message" style="color: green; margin-top: 10px;"></div>
-    <br/>
-    <button type="submit">Login</button>
+<form id="login-form" method="POST" novalidate>
+  <h3 style="text-align:center;">Login</h3>
+
+  <div class="form-group">
+    <label for="email">Email Address</label>
+    <input
+      type="email"
+      class="form-control"
+      id="email"
+      name="email"
+      placeholder="Enter email"
+      required
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input
+      type="password"
+      class="form-control"
+      id="password"
+      name="password"
+      placeholder="Enter password"
+      required
+    />
+  </div>
+
+  <div id="login-error-message" style="color: red; margin-top: 10px;">
+    {% if error %}
+      {{ error }}
+    {% endif %}
+  </div>
+
+  <br />
+
+  <button type="submit">Login</button>
 </form>
+
+<script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
 
 {% endblock %}
