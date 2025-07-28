@@ -139,6 +139,7 @@
 
 .container {
   margin-top: 12%;
+  margin-bottom: 5%;
 }
 
 
@@ -151,11 +152,24 @@
 @media(max-width: 376px){
  .description {
       font-size: 0.8rem;
+      margin-top: 0px;
       margin-bottom: 0px;
+      width: 80%;
+
   }
   .main-title{
     font-size: 2.5rem;
   }
+  .button-container {
+  margin-top: 10px;
+}
+.subtitle {
+  font-size: .9rem;
+  height: 1.5em;           
+ margin-bottom: 5px;
+ margin-top: 5px;
+ 
+}
 }
 
 
