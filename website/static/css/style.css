@@ -1,10 +1,12 @@
 body {
-    background-image: url("/static/images/mydiary3.jpg");
+    background-image: url("/static/images/mydiary4.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     height: 100vh;
     margin: 0;
+    position: relative;
+    background-position: center top;
 }
 
 form {
@@ -52,12 +54,3 @@ form {
     }
 }
 
-/* media query */
-
-@media (max-width: 480px) {
-body {
-    background-image: none;
-   background-color: antiquewhite;
-
-}
-}
