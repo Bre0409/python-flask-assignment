@@ -29,8 +29,28 @@ button {
 }
 @media(max-width: 376px){
   .container{
-      padding-top: 0%;
-  padding-bottom: 0%;
+  
   }
+  .signupbtn{
+    margin-top: 20px;
+  }
+h3{
+  font-size: 2rem;
+  margin-top: 0px;
+  padding-top: 0px;
+}
 
+}
+@media(max-width: 767px) {
+.mainheader{
+  margin: 0px;
+  padding: 0px;
+  /* padding-bottom: 2%; */
+}
+.container{
+  padding: 0px;
+  padding-bottom: 2%;
+  margin: 0px;
+  margin: auto;
+}
 }
