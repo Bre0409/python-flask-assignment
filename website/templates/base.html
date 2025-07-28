@@ -71,6 +71,18 @@
 ></script>
 <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+  $(document).ready(function () {
+    $('#navbar').on('show.bs.collapse', function () {
+      $('body').css('overflow', 'hidden');
+    });
+
+    $('#navbar').on('hidden.bs.collapse', function () {
+      $('body').css('overflow', 'auto');
+    });
+  });
+</script>
+
 
 </body>
 </html>
