@@ -140,13 +140,22 @@
 .container {
   margin-top: 12%;
   margin-bottom: 5%;
+  padding-bottom: 5%;
 }
+@media(max-width: 767px) {
+ .description {
+      font-size: 0.6rem;
+      margin-top: 0px;
+      padding-bottom: 5%;
+      width: 60%;
 
-
+  }
+}
 @media(min-width: 768px){
  .container{
     width:50%;
     margin-top: 15%;
+    padding-bottom: 5%;
   }
 }
 @media(max-width: 376px) {
