@@ -159,12 +159,12 @@
 } */
 
 /* For screens up to 480px — stack buttons and tighten spacing */
- /* @media (max-width: 480px) {
+ @media (max-width: 480px) {
 
   .container{
   border: solid 2px green;
  
-  margin-top: 50%;
+  /* margin-top: 50%; */
   
 }
   .main-title {
@@ -182,5 +182,5 @@
     border: 2px solid blue;
     margin-bottom: 0px;
   }
-} */
+}
 
