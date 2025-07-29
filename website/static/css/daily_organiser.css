@@ -215,5 +215,7 @@ body {
         margin-top: 0px; 
         width: 80%; 
   }
-  
+  .task-list{
+    max-width: 100%;
+  }
 }
