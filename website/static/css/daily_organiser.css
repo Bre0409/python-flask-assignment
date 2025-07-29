@@ -80,6 +80,7 @@
 .task-list {
   max-width: 700px;
   margin: 0 auto;
+  border: 2px solid red;
 }
 
 .task {
@@ -194,17 +195,22 @@
     width: 50%;
 }
 
-/* @media(max-width: 550px){
+@media(max-width: 480px){
   .container{
         margin-top: 0px;
         width: 100%;
-  } */
+  }
+  .task-list{
+  
+  }
+}
 
 @media(max-width: 768px){
 body {
     background-image: url("/static/images/mydiary4ex.jpg");
     background-size: cover;
     background-repeat: repeat;
-   
+
 }
+ 
 }
