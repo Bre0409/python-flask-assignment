@@ -64,7 +64,8 @@ background-color: #666;
 .events-container {
     max-width: 60%;
     margin: 0 auto;
-    background-color: #eaeae2;
+    background-color: #f5f5f0;
+;
 }
 
 .event-list {
