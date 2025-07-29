@@ -23,7 +23,7 @@ button {
   color: #fff;
 }
 .container{
-  border: solid red 2px;
+  /* border: solid red 2px; */
   padding-top: 5%;
   padding-bottom: 5%;
 }
@@ -45,7 +45,7 @@ h3{
 .mainheader{
   margin: 0px;
   padding: 0px;
-  /* padding-bottom: 2%; */
+ 
 }
 .container{
   padding: 0px;

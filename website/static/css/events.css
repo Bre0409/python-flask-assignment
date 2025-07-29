@@ -65,7 +65,7 @@ background-color: #666;
 .events-container {
     max-width: 50%;
     margin: 0 auto;
-    border: solid purple 2px;
+    /* border: solid purple 2px; */
 ;
 }
 
@@ -84,19 +84,19 @@ background-color: #666;
     margin: 0 0 5px;
     font-size: 1.1rem;
     color: #444;
-    border: 2px solid green;
+    /* border: 2px solid green; */
 }
 
 .event-item p {
     margin: 0 0 3px;
     font-size: 0.95rem;
-    border: 2px solid rgb(255, 0, 0);
+    /* border: 2px solid rgb(255, 0, 0); */
     text-align: left;
 }
 
 .event-item small {
     color: #444;
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
     font-weight: 500;
     font-size: medium;
 
@@ -104,7 +104,7 @@ background-color: #666;
 
 .event-actions {
     margin-top: 8px;
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
     
     
 }

@@ -4,7 +4,7 @@
   margin: 40px auto;
   text-align: center;
   font-family: Arial, sans-serif;
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
   box-sizing: border-box;
   padding: 10px;
 }
@@ -111,7 +111,7 @@ h1 {
 
 @media (min-width: 768px) {
   .container {
-    border: red solid 2px;
+    /* border: red solid 2px; */
     width: 50%;
     margin-top: 10%;
   }

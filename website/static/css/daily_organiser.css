@@ -1,7 +1,6 @@
-/* === Page Title and Description === */
+/* Page Title and Description */
 .main-title {
   font-size: 3.5rem;
-  /* font-size: 3rem; */
   text-align: center;
   margin-top: 40px;
   color: #444;
@@ -15,7 +14,7 @@
   margin-bottom: 20px;
 }
 
-/* === Task Form === */
+/*Task Form*/
 .task-form {
   display: flex;
   justify-content: center;
@@ -46,7 +45,7 @@
   background-color: #222;
 }
 
-/* === Day Tabs === */
+/* Days */
 .day-tabs {
   display: flex;
   justify-content: center;
@@ -76,11 +75,11 @@
   font-weight: bold;
 }
 
-/* === Task List and Task Item === */
+/* Task List and Task Item */
 .task-list {
   max-width: 600px;
   margin: 0 auto;
-  border: 2px solid red;
+  /* border: 2px solid red; */
 }
 
 .task {
@@ -104,7 +103,7 @@
   font-size: 1rem;
 }
 
-/* === Task Action Buttons === */
+/* Task Action Buttons */
 .task-actions {
   display: flex;
   gap: 6px;
@@ -191,7 +190,7 @@
 
 .container{
     margin-top: 10%;
-    border: solid green 2px;
+    /* border: solid green 2px; */
     width: 50%;
 }
 
