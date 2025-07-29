@@ -210,12 +210,3 @@ body {
   }
  
 }
-@media(width: 668px){
-  .container{
-        margin-top: 0px; 
-        width: 80%; 
-  }
-  .task-list{
-    max-width: 100%;
-  }
-}
