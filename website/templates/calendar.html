@@ -15,8 +15,10 @@
   <h1>My Calendar</h1>
 
   <div class="calendar-controls">
+    <!-- Month navigation arrows -->
     <button id="prev-month" class="nav-arrow" aria-label="Previous Month">&lt;</button>
 
+    <!-- Dropdowns -->
     <label for="day-select">Day:</label>
     <select id="day-select"></select>
 
@@ -31,6 +33,7 @@
     <button id="reset-btn">Reset to Today</button>
   </div>
 
+  <!-- Day of week headers -->
   <div class="calendar-header">
     <div>Sun</div>
     <div>Mon</div>
@@ -41,10 +44,7 @@
     <div>Sat</div>
   </div>
 
-  <!-- 📌 Wrap the calendar grid to control overflow -->
-  <div class="calendar-scroll">
-    <div id="calendar-grid" class="calendar-grid"></div>
-  </div>
+  <!-- Calendar grid -->
+  <div id="calendar-grid" class="calendar-grid"></div>
 </div>
 {% endblock %}
-
