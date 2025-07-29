@@ -1,15 +1,12 @@
 from flask import Blueprint, render_template, request, redirect, url_for
-from .events import events 
+from .events import events  # if you need events here
 
 views = Blueprint('views', __name__)
-
 
 tasks = []
 task_id_counter = 1
 
 DAY_NAMES = ["Today", "Tomorrow", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-
-
 
 @views.route('/tasks', methods=['GET', 'POST'])
 def task_list():
