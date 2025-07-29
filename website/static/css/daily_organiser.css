@@ -78,7 +78,7 @@
 
 /* === Task List and Task Item === */
 .task-list {
-  max-width: 700px;
+  max-width: 600px;
   margin: 0 auto;
   border: 2px solid red;
 }
@@ -195,16 +195,6 @@
     width: 50%;
 }
 
-@media(max-width: 480px){
-  .container{
-        margin-top: 0px;
-  
-  }
-  .task-list{
-  
-  }
-}
-
 @media(max-width: 768px){
 body {
     background-image: url("/static/images/mydiary4ex.jpg");
@@ -212,7 +202,18 @@ body {
     background-repeat: repeat;
 }
 .container{
-        width: 100%;
+        width: 90%;
+        
+  }
+  .task-list{
+    max-width: 90%;
   }
  
+}
+@media(width: 668px){
+  .container{
+        margin-top: 0px; 
+        width: 80%; 
+  }
+  
 }
