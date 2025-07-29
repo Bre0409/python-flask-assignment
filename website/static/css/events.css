@@ -151,8 +151,7 @@ body {
     background-repeat: repeat; 
 }
 .events-container{
-        margin-top: 15%;
-        width: 100%;
+       max-width: 100%;
     }
 }
     
