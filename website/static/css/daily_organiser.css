@@ -198,7 +198,7 @@
 @media(max-width: 480px){
   .container{
         margin-top: 0px;
-        width: 100%;
+  
   }
   .task-list{
   
@@ -210,7 +210,9 @@ body {
     background-image: url("/static/images/mydiary4ex.jpg");
     background-size: cover;
     background-repeat: repeat;
-
 }
+.container{
+        width: 100%;
+  }
  
 }
