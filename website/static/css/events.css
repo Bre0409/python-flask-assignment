@@ -62,9 +62,8 @@ background-color: #666;
 
 /* Upcoming Events list */
 .events-container {
-    max-width: 60%;
+    max-width: 70%;
     margin: 0 auto;
-    background-color: rgb(232, 230, 230);
 ;
 }
 
@@ -144,10 +143,17 @@ background-color: #666;
 .delete-btn:hover {
     opacity: 0.85;
 }
-
-@media(min-width: 768px){
-    .container{
-        margin-top: 15%;
-    }
     
+    @media(max-width: 768px){
+body {
+    background-image: url("/static/images/mydiary4ex.jpg");
+    background-size: cover;
+    background-repeat: repeat; 
 }
+.events-container{
+        margin-top: 15%;
+        width: 100%;
+    }
+}
+    
+
