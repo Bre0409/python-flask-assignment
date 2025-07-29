@@ -194,14 +194,17 @@
     width: 50%;
 }
 
-@media(max-width: 550px){
+/* @media(max-width: 550px){
   .container{
         margin-top: 0px;
         width: 100%;
-  }
-}
-@media(max-width: 376px){
-  body{
-    height:150vh;
+  } */
 
-}}
+@media(max-width: 768px){
+body {
+    background-image: url("/static/images/mydiary4ex.jpg");
+    background-size: cover;
+    background-repeat: repeat;
+   
+}
+}
