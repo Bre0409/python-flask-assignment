@@ -62,7 +62,7 @@ background-color: #666;
 
 /* Upcoming Events list */
 .events-container {
-    max-width: 70%;
+    max-width: 50%;
     margin: 0 auto;
     border: solid purple 2px;
 ;
