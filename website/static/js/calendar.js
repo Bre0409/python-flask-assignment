@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderCalendar(year, month);
   }
 
-  // Initialize dropdowns and calendar
+  // Dropdowns and calendar
   populateMonths();
   populateYears();
 
@@ -180,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCalendar();
   });
 
-  // ✅ FIX: Limit tooltip close logic to calendar wrapper only
+  // Text bubble containing calender information accesed when clicked touched or hover over saved info
   if (calendarWrapper) {
     calendarWrapper.addEventListener('click', (event) => {
       const isInsideDay = event.target.closest('.calendar-day');

@@ -23,13 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
       error_message.innerHTML = errors.join('<br>');
       success_message.innerText = '';
     } else {
-      // Let the form submit normally here to trigger server-side signup
-      // Remove e.preventDefault() to allow submission
-      // If you want to keep success message and prevent submission, uncomment below:
-      // e.preventDefault();
-      // success_message.innerText = 'You have been successfully signed up!';
-      // error_message.innerText = '';
-      // signupform.reset();
+   
     }
   });
 
@@ -50,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
       errors.push('Email is required');
       email_input.classList.add('incorrect');
     } else {
-      // Basic email format check (optional)
+      // Email format check
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(email)) {
         errors.push('Invalid email format');

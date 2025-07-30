@@ -10,14 +10,14 @@
  <strong>Add, Edit, Complete</strong>  or <strong>Delete</strong> tasks by selecting a day below.
 </p>
 
-<!-- ➕ Add Task Form -->
+<!-- Add task form -->
 <form method="POST" action="{{ url_for('views.task_list') }}" class="task-form">
   <input type="hidden" name="day" id="dayInput" value="{{ selected_day }}">
   <input type="text" name="task" placeholder="Add a task for {{ selected_day }}" required>
   <button type="submit">Add Task</button>
 </form>
 
-<!-- 🔘 Day Selector Tabs -->
+<!-- Day Selector Tabs -->
 <div class="day-tabs">
   {% for day in ["Today", "Tomorrow", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %}
     <a href="{{ url_for('views.task_list', day=day) }}"
@@ -27,14 +27,14 @@
   {% endfor %}
 </div>
 
-<!-- 📋 Task List -->
+<!--Task List -->
 <div class="task-list">
   {% for task in tasks if task.day == selected_day %}
     <div class="task {% if task.completed %}completed{% endif %}">
-      <!-- 📝 Task Text -->
+      
       <span class="task-text" id="text-{{ task.id }}">{{ task.text }}</span>
 
-      <!-- ✏️ Edit Form -->
+      <!-- Edit Form -->
       <form method="POST" action="{{ url_for('views.edit_task', task_id=task.id) }}"
             class="edit-form" id="form-{{ task.id }}">
         <input type="text" name="edited_text" value="{{ task.text }}" required>
@@ -42,7 +42,7 @@
         <button type="button" class="cancel-btn small" onclick="toggleEdit({{ task.id }})">Cancel</button>
       </form>
 
-      <!-- 🔘 Action Buttons -->
+      <!-- Action Buttons -->
       <div class="task-actions">
         <form method="POST" action="{{ url_for('views.complete_task', task_id=task.id) }}" style="display:inline;">
           <button type="submit" class="complete">{% if task.completed %}Undo{% else %}✔{% endif %}</button>

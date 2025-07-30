@@ -1,10 +1,10 @@
-// ✅ Handle day switching via tab buttons
+// Day switching tabs
 document.addEventListener("DOMContentLoaded", () => {
   const tabs = document.querySelectorAll(".day-tab");
 
   tabs.forEach((tab) => {
     tab.addEventListener("click", (event) => {
-      event.preventDefault(); // Prevent link nav
+      event.preventDefault(); 
       const selectedDay = tab.textContent.trim();
       const url = new URL(window.location.href);
       url.searchParams.set("day", selectedDay);
@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // ✅ Attach edit toggle buttons
+  // Add edit toggle buttons
   document.querySelectorAll(".edit-toggle-btn[data-task-id]").forEach(button => {
     button.addEventListener("click", () => {
       const taskId = button.dataset.taskId;
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// ✅ Toggle edit form visibility
+// Toggle edit form 
 function toggleEdit(taskId) {
   const textSpan = document.getElementById(`text-${taskId}`);
   const editForm = document.getElementById(`form-${taskId}`);

@@ -10,7 +10,7 @@
     <h2>{{ edit_event and "Edit Event" or "Add a New Event" }}</h2>
     <p>{{ edit_event and "Update the event details and click 'Update'." or "Fill in the event details and click 'Add Event'." }}</p>
 
-    <!-- Form (Add or Edit) -->
+    <!-- Form Add or Edit -->
     <form 
         action="{{ edit_event and url_for('events.edit_event', event_id=edit_event.id) or url_for('events.add_event') }}" 
         method="POST" 

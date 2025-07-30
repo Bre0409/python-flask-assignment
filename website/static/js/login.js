@@ -47,11 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
       errorMessage.innerHTML = errors.join('<br>');
       successMessage.innerText = '';
     } else {
-      // Allow normal form submission here to perform login
-      // If you want to prevent submit for demo uncomment below:
-      // e.preventDefault();
-      // successMessage.innerText = 'Login submitted successfully!';
-      // errorMessage.innerText = '';
+    
     }
   });
 

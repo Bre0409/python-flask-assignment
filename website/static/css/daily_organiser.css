@@ -159,7 +159,7 @@
   background-color: green;
 }
 
-/* === Edit Form === */
+/* Edit Form */
 .edit-form {
   display: none;
   flex-direction: row;
@@ -179,10 +179,10 @@
   border: 1px solid #999;
 }
 
-/* === No Tasks Text === */
+/*  No Tasks Text */
 .no-tasks {
   text-align: center;
-  color: #bbb;
+  color: black;
   font-style: italic;
   margin-top: 20px;
 }

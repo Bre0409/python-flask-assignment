@@ -1,3 +1,5 @@
+
+// Typed out messages on home page under H1 which stops looping and after last message displayed.
 document.addEventListener('DOMContentLoaded', function () {
   const subtitleEl = document.getElementById('typed-output');
 
