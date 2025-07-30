@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const calendarGrid = document.getElementById('calendar-grid');
   const prevMonthBtn = document.getElementById('prev-month');
   const nextMonthBtn = document.getElementById('next-month');
+  const calendarWrapper = document.querySelector('.calendar-wrapper');
 
   if (!monthSelect || !yearSelect || !daySelect || !resetBtn || !calendarGrid || !prevMonthBtn || !nextMonthBtn) return;
 
@@ -72,7 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const dateStr = `${year}-${(month + 1).toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
       const dayEvents = events.filter(e => e.date === dateStr);
 
-      // Highlight today
       if (isTodayMonth && today.getDate() === day) {
         dayDiv.classList.add('today');
       }
@@ -136,8 +136,11 @@ document.addEventListener('DOMContentLoaded', () => {
   populateMonths();
   populateYears();
 
+  // Set dropdowns to current date
   monthSelect.value = currentDate.getMonth();
   yearSelect.value = currentDate.getFullYear();
+  daySelect.value = currentDate.getDate();
+
   updateCalendar();
 
   // Event listeners
@@ -177,12 +180,15 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCalendar();
   });
 
-  // ✅ FIX: Only close tooltips if clicking inside the calendar grid
-  document.addEventListener('click', (event) => {
-    const isInsideCalendar = event.target.closest('#calendar-grid');
-    if (isInsideCalendar) {
-      document.querySelectorAll('.event-tooltip').forEach(t => t.style.display = 'none');
-    }
-  });
+  // ✅ FIX: Limit tooltip close logic to calendar wrapper only
+  if (calendarWrapper) {
+    calendarWrapper.addEventListener('click', (event) => {
+      const isInsideDay = event.target.closest('.calendar-day');
+      if (!isInsideDay) {
+        document.querySelectorAll('.event-tooltip').forEach(t => t.style.display = 'none');
+      }
+    });
+  }
 });
+
 
