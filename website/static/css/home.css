@@ -191,6 +191,9 @@
   font-size: .8rem;
 }
 
+.logout-btn{
+  display: none;
+}
 }
 
 

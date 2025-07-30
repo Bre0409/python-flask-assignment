@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     toggler.addEventListener('click', toggleNav);
     toggler.addEventListener('touchstart', (e) => {
-      e.preventDefault(); // prevent double firing on some touch devices
+      e.preventDefault();
       toggleNav();
     });
   }
