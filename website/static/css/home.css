@@ -156,6 +156,9 @@
   font-size: 0.7rem;
   width: 60%;
 }
+.logout-btn{
+  display: none;
+}
 }
 @media(min-width: 768px){
  .container{
@@ -163,9 +166,6 @@
     margin-top: 15%;
     padding-bottom: 5%;
   }
-  .logout-btn{
-  display: none;
-}
 }
  
 @media(max-width: 376px) {
@@ -193,6 +193,10 @@
 .login-success-message {
   font-size: .8rem;
 }
+
+/* .logout-btn{
+  display: none;
+} */
 }
 
 
