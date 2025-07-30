@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
       dayDiv.tabIndex = 0;
       dayDiv.textContent = day;
 
-      const dateStr = `${year}-${(month+1).toString().padStart(2,'0')}-${day.toString().padStart(2,'0')}`;
+      const dateStr = `${year}-${(month + 1).toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
       const dayEvents = events.filter(e => e.date === dateStr);
 
       // Highlight today
@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (year === today.getFullYear() && month === today.getMonth()) {
       daySelect.value = today.getDate();
     } else {
-      daySelect.value = 1; // Or leave unselected if you prefer
+      daySelect.value = 1;
     }
 
     renderCalendar(year, month);
@@ -177,8 +177,12 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCalendar();
   });
 
-  // Hide any open tooltips when clicking elsewhere
-  document.addEventListener('click', () => {
-    document.querySelectorAll('.event-tooltip').forEach(t => t.style.display = 'none');
+  // ✅ FIX: Only close tooltips if clicking inside the calendar grid
+  document.addEventListener('click', (event) => {
+    const isInsideCalendar = event.target.closest('#calendar-grid');
+    if (isInsideCalendar) {
+      document.querySelectorAll('.event-tooltip').forEach(t => t.style.display = 'none');
+    }
   });
 });
+
