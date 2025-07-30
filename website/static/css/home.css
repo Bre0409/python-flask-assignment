@@ -163,6 +163,9 @@
     margin-top: 15%;
     padding-bottom: 5%;
   }
+  .logout-btn{
+  display: none;
+}
 }
  
 @media(max-width: 376px) {
@@ -189,10 +192,6 @@
 
 .login-success-message {
   font-size: .8rem;
-}
-
-.logout-btn{
-  display: none;
 }
 }
 
