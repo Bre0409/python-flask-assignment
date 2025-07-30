@@ -26,9 +26,9 @@
 {% endif %}
 
 <div class="button-container">
-  {% if session.get('user_email') %}
+  <!-- {% if session.get('user_email') %}
     <a href="{{ url_for('auth.logout') }}" class="btn-home logout-btn">Logout</a>
-  {% else %}
+  {% else %} -->
     <a href="{{ url_for('auth.login') }}" class="btn-home login-btn">Login</a>
 
     {% if not session.get('just_signed_up') %}
