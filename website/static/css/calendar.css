@@ -20,6 +20,7 @@ h1 {
   gap: 10px;
   align-items: center;
   flex-wrap: wrap;
+  
 }
 
 .calendar-controls label {
@@ -37,6 +38,10 @@ h1 {
   user-select: none;
   background-color: white;
   transition: background-color 0.3s ease;
+}
+.calendar-controls button{
+  background-color: #777;
+  border: #222;
 }
 
 .calendar-controls button:hover {
@@ -100,12 +105,44 @@ h1 {
 }
 
 .calendar-day ul.event-list li {
-  background-color: #d0eaff;
   margin-bottom: 2px;
   padding: 2px 4px;
   border-radius: 3px;
   cursor: default;
   word-break: break-word;
+}
+
+.calendar-day {
+  position: relative;
+}
+
+.event-tooltip {
+  position: absolute;
+  top: -5px;
+  left: 100%;
+  transform: translateX(10px);
+  background-color: rgba(50, 50, 50, 0.95);
+  color: black;
+  padding: 8px;
+  border-radius: 5px;
+  font-size: 0.8em;
+  width: 200px;
+  z-index: 10;
+  display: none;
+  white-space: normal;
+  text-align: left;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.calendar-day:hover .event-tooltip,
+.calendar-day:focus-within .event-tooltip {
+  display: block;
+}
+
+.calendar-day.today {
+  border: 2px solid #666;
+  font-weight: bold;
+  color: black;
 }
 
 

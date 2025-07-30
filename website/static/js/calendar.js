@@ -1,4 +1,3 @@
-// Calendar script (no changes needed)
 document.addEventListener('DOMContentLoaded', () => {
   const monthSelect = document.getElementById('month-select');
   const yearSelect = document.getElementById('year-select');
@@ -16,8 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
 
   let currentDate = new Date();
-
-  // These events would be injected from Flask in your template:
   const events = window.calendarEvents || [];
 
   function populateMonths() {
@@ -54,9 +51,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function renderCalendar(year, month) {
     calendarGrid.innerHTML = '';
-
     const firstDay = new Date(year, month, 1).getDay();
     const totalDays = new Date(year, month + 1, 0).getDate();
+
+    const today = new Date();
+    const isTodayMonth = today.getFullYear() === year && today.getMonth() === month;
 
     for (let i = 0; i < firstDay; i++) {
       const blank = document.createElement('div');
@@ -67,23 +66,51 @@ document.addEventListener('DOMContentLoaded', () => {
     for (let day = 1; day <= totalDays; day++) {
       const dayDiv = document.createElement('div');
       dayDiv.className = 'calendar-day';
+      dayDiv.tabIndex = 0;
       dayDiv.textContent = day;
 
-      // Check if events exist for this date
       const dateStr = `${year}-${(month+1).toString().padStart(2,'0')}-${day.toString().padStart(2,'0')}`;
       const dayEvents = events.filter(e => e.date === dateStr);
+
+      // Highlight today
+      if (isTodayMonth && today.getDate() === day) {
+        dayDiv.classList.add('today');
+      }
 
       if (dayEvents.length > 0) {
         const eventList = document.createElement('ul');
         eventList.className = 'event-list';
 
+        const tooltip = document.createElement('div');
+        tooltip.className = 'event-tooltip';
+
         dayEvents.forEach(event => {
           const li = document.createElement('li');
           li.textContent = event.title;
           eventList.appendChild(li);
+
+          const p = document.createElement('p');
+          p.innerHTML = `<strong>${event.title}</strong><br>${event.description || 'No description.'}`;
+          tooltip.appendChild(p);
         });
 
         dayDiv.appendChild(eventList);
+        dayDiv.appendChild(tooltip);
+
+        dayDiv.addEventListener('click', (e) => {
+          e.stopPropagation();
+          document.querySelectorAll('.event-tooltip').forEach(t => {
+            if (t !== tooltip) t.style.display = 'none';
+          });
+          tooltip.style.display = tooltip.style.display === 'block' ? 'none' : 'block';
+        });
+
+        dayDiv.addEventListener('mouseenter', () => {
+          tooltip.style.display = 'block';
+        });
+        dayDiv.addEventListener('mouseleave', () => {
+          tooltip.style.display = 'none';
+        });
       }
 
       calendarGrid.appendChild(dayDiv);
@@ -94,18 +121,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const year = parseInt(yearSelect.value);
     const month = parseInt(monthSelect.value);
     populateDays(year, month);
+
+    const today = new Date();
+    if (year === today.getFullYear() && month === today.getMonth()) {
+      daySelect.value = today.getDate();
+    } else {
+      daySelect.value = 1; // Or leave unselected if you prefer
+    }
+
     renderCalendar(year, month);
   }
 
-  // Initialize selects and calendar
+  // Initialize dropdowns and calendar
   populateMonths();
   populateYears();
 
   monthSelect.value = currentDate.getMonth();
   yearSelect.value = currentDate.getFullYear();
-
   updateCalendar();
 
+  // Event listeners
   monthSelect.addEventListener('change', updateCalendar);
   yearSelect.addEventListener('change', updateCalendar);
 
@@ -140,5 +175,10 @@ document.addEventListener('DOMContentLoaded', () => {
     monthSelect.value = month;
     yearSelect.value = year;
     updateCalendar();
+  });
+
+  // Hide any open tooltips when clicking elsewhere
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.event-tooltip').forEach(t => t.style.display = 'none');
   });
 });

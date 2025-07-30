@@ -110,12 +110,14 @@
 }
 
 .login-success-message {
+  margin: auto;
   margin-bottom: 50px;
   color: #155724;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: bold;
   text-align: center;
   animation: fadeIn 1s ease-in-out;
+  width: 80%;
 }
 
 @keyframes fadeIn {
@@ -148,9 +150,12 @@
       margin-top: 0px;
       padding-bottom: 5%;
       width: 60%;
-      margin-bottom: 0px;
-
+      margin-bottom: 0px;   
   }
+  .login-success-message {
+  font-size: 0.7rem;
+  width: 60%;
+}
 }
 @media(min-width: 768px){
  .container{
@@ -159,6 +164,7 @@
     padding-bottom: 5%;
   }
 }
+ 
 @media(max-width: 376px) {
  .description {
       font-size: 0.8rem;
@@ -180,6 +186,11 @@
  margin-top: 5px;
  
 }
+
+.login-success-message {
+  font-size: .8rem;
+}
+
 }
 
 
